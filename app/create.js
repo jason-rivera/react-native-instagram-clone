@@ -1,10 +1,12 @@
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const Create = () => {
   return (
-    <View>
-      <Text>Create</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <Text>Create</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 

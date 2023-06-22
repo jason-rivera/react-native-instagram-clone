@@ -1,10 +1,12 @@
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 
 const Reels = () => {
   return (
-    <View>
-      <Text>Reels</Text>
-    </View>
+    <SafeAreaView>
+      <View>
+        <Text>Reels</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
