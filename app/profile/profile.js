@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import images from '../../constants/images';
 import * as React from 'react';
 
@@ -148,7 +148,7 @@ const Profile = () => {
 
   return (
     <>
-      <View style={{ paddingHorizontal: 15 }}>
+      <View style={{ paddingHorizontal: 15, backgroundColor: 'white' }}>
         <View
           style={{
             flexDirection: 'row',
@@ -213,6 +213,9 @@ const Profile = () => {
         renderScene={renderScene}
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
+        renderTabBar={(props) => (
+          <TabBar {...props} style={{ backgroundColor: 'white' }} />
+        )} // <-- add this line
       />
     </>
   );

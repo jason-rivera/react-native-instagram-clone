@@ -29,7 +29,7 @@ const Layout = () => {
           }}
         >
           <Tabs.Screen
-            name='index'
+            name='home/index'
             options={{
               tabBarIcon: () => <Icon name='home' size={20} />,
             }}
@@ -67,7 +67,7 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='index.style'
+            name='home/index.style'
             options={{
               // headerShown: true,
               href: null,
@@ -82,6 +82,13 @@ const Layout = () => {
           />
           <Tabs.Screen
             name='profile/profile.style'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name='index'
             options={{
               // headerShown: true,
               href: null,
