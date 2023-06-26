@@ -7,73 +7,75 @@ import SafeViewAndroid from '../styles/SafeViewAndroid.style';
 
 const Layout = () => {
   return (
-    <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
-      <Tabs
-        screenOptions={{
-          headerShown: false,
-          // tabBarActiveTintColor: 'red',
-          // tabBarInactiveTintColor: 'pink',
-          tabBarStyle: {
-            backgroundColor: 'white',
-          },
-          tabBarLabelStyle: {
-            fontSize: 16,
-            fontWeight: 'bold',
-          },
-        }}
+    <>
+      <SafeAreaView
+        style={SafeViewAndroid.AndroidSafeArea}
+        edges={['top', 'left', 'right']}
       >
-        <Tabs.Screen
-          name='index'
-          options={{
-            tabBarIcon: () => <Icon name='home' size={30} />,
+        {/* <SafeAreaView style={{ flex: 1 }}> */}
+        <Tabs
+          screenOptions={{
+            headerShown: false,
+            // tabBarActiveTintColor: 'red',
+            // tabBarInactiveTintColor: 'pink',
+            tabBarStyle: {
+              backgroundColor: 'red',
+            },
+            tabBarLabelStyle: {
+              fontSize: 16,
+              fontWeight: 'bold',
+            },
             tabBarShowLabel: false,
           }}
-        />
-        <Tabs.Screen
-          name='search'
-          options={{
-            tabBarIcon: () => <Icon name='search' size={30} />,
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tabs.Screen
-          name='create'
-          options={{
-            tabBarIcon: () => <Icon name='plus' size={30} />,
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tabs.Screen
-          name='reels'
-          options={{
-            tabBarIcon: () => <Icon name='film' size={30} />,
-            tabBarShowLabel: false,
-          }}
-        />
-        <Tabs.Screen
-          name='profile'
-          options={{
-            tabBarIcon: () => <Icon name='user' size={30} />,
-            tabBarShowLabel: false,
-          }}
-        />
-        {/** You can hide tabs like so: */}
-        <Tabs.Screen
-          name='hidden'
-          options={{
-            // headerShown: true,
-            href: null,
-          }}
-        />
-        <Tabs.Screen
-          name='index.style'
-          options={{
-            // headerShown: true,
-            href: null,
-          }}
-        />
-      </Tabs>
-    </SafeAreaView>
+        >
+          <Tabs.Screen
+            name='index'
+            options={{
+              tabBarIcon: () => <Icon name='home' size={20} />,
+            }}
+          />
+          <Tabs.Screen
+            name='search'
+            options={{
+              tabBarIcon: () => <Icon name='search' size={20} />,
+            }}
+          />
+          <Tabs.Screen
+            name='create'
+            options={{
+              tabBarIcon: () => <Icon name='plus' size={20} />,
+            }}
+          />
+          <Tabs.Screen
+            name='reels'
+            options={{
+              tabBarIcon: () => <Icon name='film' size={20} />,
+            }}
+          />
+          <Tabs.Screen
+            name='profile'
+            options={{
+              tabBarIcon: () => <Icon name='user' size={20} />,
+            }}
+          />
+          {/** You can hide tabs like so: */}
+          <Tabs.Screen
+            name='hidden'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name='index.style'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
+        </Tabs>
+      </SafeAreaView>
+    </>
   );
 };
 

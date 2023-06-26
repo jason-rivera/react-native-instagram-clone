@@ -1,13 +1,13 @@
 import { View, Text, SafeAreaView } from 'react-native';
 
-const Create = () => {
+const Login = () => {
   return (
     // <SafeAreaView>
     <View>
-      <Text>Create</Text>
+      <Text>Login</Text>
     </View>
     // </SafeAreaView>
   );
 };
 
-export default Create;
+export default Login;
