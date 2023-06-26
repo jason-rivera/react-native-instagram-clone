@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import { TabView, SceneMap } from 'react-native-tab-view';
-import images from '../constants/images';
+import images from '../../constants/images';
 import * as React from 'react';
 
 import styles from './profile.style';

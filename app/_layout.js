@@ -53,7 +53,7 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='profile'
+            name='profile/profile'
             options={{
               tabBarIcon: () => <Icon name='user' size={20} />,
             }}
@@ -81,7 +81,7 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='profile.style'
+            name='profile/profile.style'
             options={{
               // headerShown: true,
               href: null,
