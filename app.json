@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "instagram_clone",
-    "slug": "instagram_clone"
+    "slug": "instagram_clone",
+    "android": {
+      "package": "com.jasonrivera.instagram_clone"
+    }
   }
 }

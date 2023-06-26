@@ -19,7 +19,7 @@ const Layout = () => {
             // tabBarActiveTintColor: 'red',
             // tabBarInactiveTintColor: 'pink',
             tabBarStyle: {
-              backgroundColor: 'red',
+              backgroundColor: 'white',
             },
             tabBarLabelStyle: {
               fontSize: 16,
@@ -68,6 +68,20 @@ const Layout = () => {
           />
           <Tabs.Screen
             name='index.style'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name='login'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name='profile.style'
             options={{
               // headerShown: true,
               href: null,
