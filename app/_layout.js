@@ -74,13 +74,6 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='login'
-            options={{
-              // headerShown: true,
-              href: null,
-            }}
-          />
-          <Tabs.Screen
             name='profile/profile.style'
             options={{
               // headerShown: true,

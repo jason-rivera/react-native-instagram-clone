@@ -39,7 +39,7 @@ const posts = [
 
 const Home = () => {
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: 'white' }}>
       <HomeHeader />
       <FlatList
         data={profiles}
