@@ -83,6 +83,13 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
+            name='reels/reels.style'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
+          <Tabs.Screen
             name='index'
             options={{
               // headerShown: true,

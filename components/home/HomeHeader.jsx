@@ -9,7 +9,6 @@ const HomeHeader = () => {
         style={{
           flexDirection: 'row',
           justifyContent: 'space-between',
-          paddingHorizontal: 10,
         }}
       >
         <View style={{ height: 40, width: 100 }}>
@@ -24,7 +23,6 @@ const HomeHeader = () => {
           style={{
             flexDirection: 'row',
             gap: 10,
-            fontSize: 20,
           }}
         >
           <Text>♥</Text>

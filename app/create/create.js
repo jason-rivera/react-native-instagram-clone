@@ -32,7 +32,7 @@ export default function Create() {
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      mediaTypes: ImagePicker.MediaTypeOptions['Images'],
       allowsEditing: true,
       aspect: [1, 1],
       quality: 1,
@@ -78,18 +78,36 @@ export default function Create() {
       )} */}
 
       {hasPermission ? (
-        <TouchableOpacity
-          style={{
-            backgroundColor: '#f0f0f0',
-            padding: 15,
-            borderRadius: 5,
-            borderWidth: 2,
-            borderColor: '#87f8f8l',
-          }}
-          onPress={pickImage}
-        >
-          <Text style={{ fontSize: 16 }}>Upload Image</Text>
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', gap: 10, margin: 10 }}>
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#f0f0f0',
+              padding: 15,
+              borderRadius: 5,
+              borderWidth: 2,
+              borderColor: '#87f8f8l',
+            }}
+            onPress={pickImage}
+          >
+            <Text style={{ fontSize: 16 }}>
+              {image ? 'Upload different image' : 'Upload image'}
+            </Text>
+          </TouchableOpacity>
+          {image && (
+            <TouchableOpacity
+              style={{
+                backgroundColor: '#f0f0f0',
+                padding: 15,
+                borderRadius: 5,
+                borderWidth: 2,
+                borderColor: '#87f8f8l',
+              }}
+              onPress={() => console.log('Next clicked')}
+            >
+              <Text style={{ fontSize: 16 }}>Next</Text>
+            </TouchableOpacity>
+          )}
+        </View>
       ) : (
         <Text
           style={{

@@ -156,7 +156,9 @@ const Profile = () => {
             paddingVertical: 5,
           }}
         >
-          <Text style={{ fontWeight: 'bold', fontSize: 23 }}>jvsonrivera</Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 23 }}>
+            🔒 jvsonrivera
+          </Text>
           <View style={{ flexDirection: 'row', gap: 20 }}>
             <Text style={{ fontSize: 20 }}>➕</Text>
             <Text style={{ fontSize: 20 }}>🍔</Text>
@@ -180,15 +182,15 @@ const Profile = () => {
           >
             <View>
               <Text style={styles.profileStatsNum}>168</Text>
-              <Text>Posts</Text>
+              <Text style={styles.profileStatsText}>Posts</Text>
             </View>
             <View>
               <Text style={styles.profileStatsNum}>1,033</Text>
-              <Text>Followers</Text>
+              <Text style={styles.profileStatsText}>Followers</Text>
             </View>
             <View>
               <Text style={styles.profileStatsNum}>1,845</Text>
-              <Text>Following</Text>
+              <Text style={styles.profileStatsText}>Following</Text>
             </View>
           </View>
         </View>
@@ -196,13 +198,13 @@ const Profile = () => {
           <Text style={styles.profileUsername}>Jason ✌</Text>
           <View style={{ flexDirection: 'row', gap: 5 }}>
             <TouchableOpacity style={[styles.profileBtn, { flexGrow: 1 }]}>
-              <Text>Edit profile</Text>
+              <Text style={styles.profileBtnText}>Edit profile</Text>
             </TouchableOpacity>
             <TouchableOpacity style={[styles.profileBtn, { flexGrow: 1 }]}>
-              <Text>Share profile</Text>
+              <Text style={styles.profileBtnText}>Share profile</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.profileBtn}>
-              <Text>+🤺</Text>
+              <Text style={styles.profileBtnText}>+🤺</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -214,7 +216,11 @@ const Profile = () => {
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
         renderTabBar={(props) => (
-          <TabBar {...props} style={{ backgroundColor: 'white' }} />
+          <TabBar
+            {...props}
+            style={{ backgroundColor: 'white' }}
+            indicatorStyle={{ backgroundColor: 'black', height: 1 }}
+          />
         )} // <-- add this line
       />
     </>

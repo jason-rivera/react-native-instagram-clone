@@ -24,7 +24,7 @@ const Search = () => {
             borderWidth: 1,
             borderColor: '#f0f0f0',
             backgroundColor: '#f0f0f0',
-            margin: 5,
+            margin: 10,
             height: 40,
             borderRadius: 5,
             paddingHorizontal: 10,

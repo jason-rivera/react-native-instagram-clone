@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <FlatList
       ListHeaderComponent={
-        <>
+        <View style={{ paddingHorizontal: 10, paddingTop: 10 }}>
           <HomeHeader />
           <FlatList
             data={profiles}
@@ -58,7 +58,7 @@ const Home = () => {
             keyExtractor={(item) => item}
             horizontal
           />
-        </>
+        </View>
       }
       data={posts}
       renderItem={({ item }) => (
@@ -69,30 +69,33 @@ const Home = () => {
               uri: 'https://i.pinimg.com/originals/30/e7/cf/30e7cfb75da311ffd3a658ab798ec7ab.jpg',
             }}
           />
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}
-          >
+          <View style={{ padding: 10, gap: 10 }}>
             <View
               style={{
                 flexDirection: 'row',
+                justifyContent: 'space-between',
               }}
             >
-              <Text>👍</Text>
-              <Text>💬</Text>
-              <Text>✈</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  gap: 10,
+                }}
+              >
+                <Text>👍</Text>
+                <Text>💬</Text>
+                <Text>✈</Text>
+              </View>
+              <Text>🏴</Text>
             </View>
-            <Text>🏴</Text>
-          </View>
-          <View>
-            <Text style={{ fontWeight: 'bold' }}>{item.likes} likes</Text>
-            <View style={{ flexDirection: 'row' }}>
-              <Text style={{ fontWeight: 'bold' }}>{item.username} </Text>
-              <Text>{item.caption}</Text>
+            <View style={{ gap: 5 }}>
+              <Text style={{ fontWeight: 'bold' }}>{item.likes} likes</Text>
+              <View style={{ flexDirection: 'row' }}>
+                <Text style={{ fontWeight: 'bold' }}>{item.username} </Text>
+                <Text>{item.caption}</Text>
+              </View>
+              <Text style={{ color: 'grey' }}>{item.comments} comments</Text>
             </View>
-            <Text style={{ color: 'grey' }}>{item.comments} comments</Text>
           </View>
         </View>
       )}
