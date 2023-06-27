@@ -1,8 +1,7 @@
 import { Tabs } from 'expo-router';
 import { Text, View, SafeAreaView } from 'react-native';
 
-import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
-import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { FontAwesome5Icon, MaterialIcon } from '../utils/utils';
 
 import SafeViewAndroid from '../styles/SafeViewAndroid.style';
 

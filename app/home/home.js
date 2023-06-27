@@ -11,6 +11,7 @@ import styles from './home.style';
 import images from '../../constants/images';
 
 import HomeHeader from '../../components/home/HomeHeader';
+import { FontAwesome5Icon, MaterialIcon } from '../../utils/utils';
 
 const profiles = ['vc_f', 'jaiden_r', 'm3lpac'];
 const posts = [
@@ -41,7 +42,13 @@ const Home = () => {
   return (
     <FlatList
       ListHeaderComponent={
-        <View style={{ paddingHorizontal: 10, paddingTop: 10 }}>
+        <View
+          style={{
+            paddingHorizontal: 10,
+            paddingTop: 10,
+            backgroundColor: 'white',
+          }}
+        >
           <HomeHeader />
           <FlatList
             data={profiles}
@@ -62,7 +69,7 @@ const Home = () => {
       }
       data={posts}
       renderItem={({ item }) => (
-        <View>
+        <View style={{ backgroundColor: 'white' }}>
           <Image
             style={{ width: '100%', height: 500 }}
             source={{
@@ -79,14 +86,16 @@ const Home = () => {
               <View
                 style={{
                   flexDirection: 'row',
-                  gap: 10,
+                  gap: 15,
                 }}
               >
-                <Text>👍</Text>
-                <Text>💬</Text>
-                <Text>✈</Text>
+                <MaterialIcon size={25} name={'fire'} color='black' />
+                <MaterialIcon size={25} name={'chat-outline'} color='black' />
+                <MaterialIcon size={23} name={'send'} color='black' />
               </View>
-              <Text>🏴</Text>
+              <View style={{ paddingRight: 6 }}>
+                <FontAwesome5Icon size={23} name={'save'} color='black' />
+              </View>
             </View>
             <View style={{ gap: 5 }}>
               <Text style={{ fontWeight: 'bold' }}>{item.likes} likes</Text>
