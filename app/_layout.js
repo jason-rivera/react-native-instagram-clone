@@ -43,7 +43,7 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='create'
+            name='create/create'
             options={{
               tabBarIcon: () => <Icon name='plus' size={20} />,
             }}
