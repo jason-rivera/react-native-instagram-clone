@@ -1,11 +1,15 @@
 import { Tabs } from 'expo-router';
 import { Text, View, SafeAreaView } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import SafeViewAndroid from '../styles/SafeViewAndroid.style';
 
 const Layout = () => {
+  const iconColor = (focused) => {
+    return focused ? 'red' : 'black';
+  };
   return (
     <>
       <SafeAreaView
@@ -33,31 +37,66 @@ const Layout = () => {
           <Tabs.Screen
             name='home/home'
             options={{
-              tabBarIcon: () => <Icon name='home' size={20} />,
+              tabBarIcon: ({ focused }) => (
+                <FontAwesome5Icon
+                  size={20}
+                  name={focused ? 'house-damage' : 'home'}
+                  color={iconColor(focused)}
+                  focused={focused}
+                />
+              ),
             }}
           />
           <Tabs.Screen
             name='search/search'
             options={{
-              tabBarIcon: () => <Icon name='search' size={20} />,
+              tabBarIcon: ({ focused }) => (
+                <FontAwesome5Icon
+                  size={22}
+                  name={focused ? 'search-plus' : 'search'}
+                  color={iconColor(focused)}
+                  focused={focused}
+                />
+              ),
             }}
           />
           <Tabs.Screen
             name='create/create'
             options={{
-              tabBarIcon: () => <Icon name='plus' size={20} />,
+              tabBarIcon: ({ focused }) => (
+                <MaterialIcon
+                  size={25}
+                  name={focused ? 'tooltip-plus' : 'tooltip-plus-outline'}
+                  color={iconColor(focused)}
+                  focused={focused}
+                />
+              ),
             }}
           />
           <Tabs.Screen
             name='reels/reels'
             options={{
-              tabBarIcon: () => <Icon name='film' size={20} />,
+              tabBarIcon: ({ focused }) => (
+                <MaterialIcon
+                  size={25}
+                  name={focused ? 'movie-open' : 'movie-play'}
+                  color={iconColor(focused)}
+                  focused={focused}
+                />
+              ),
             }}
           />
           <Tabs.Screen
             name='profile/profile'
             options={{
-              tabBarIcon: () => <Icon name='user' size={20} />,
+              tabBarIcon: ({ focused }) => (
+                <FontAwesome5Icon
+                  size={20}
+                  name={focused ? 'user-astronaut' : 'user'}
+                  color={iconColor(focused)}
+                  focused={focused}
+                />
+              ),
             }}
           />
           {/** You can hide tabs like so: */}
