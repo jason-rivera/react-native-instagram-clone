@@ -20,6 +20,8 @@ const Layout = () => {
             // tabBarInactiveTintColor: 'pink',
             tabBarStyle: {
               backgroundColor: 'white',
+              height: 70,
+              paddingBottom: Platform.OS === 'android' ? 0 : 0, // removes iOS padding
             },
             tabBarLabelStyle: {
               fontSize: 16,
@@ -29,7 +31,7 @@ const Layout = () => {
           }}
         >
           <Tabs.Screen
-            name='home/index'
+            name='home/home'
             options={{
               tabBarIcon: () => <Icon name='home' size={20} />,
             }}
@@ -47,7 +49,7 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='reels'
+            name='reels/reels'
             options={{
               tabBarIcon: () => <Icon name='film' size={20} />,
             }}
@@ -67,7 +69,7 @@ const Layout = () => {
             }}
           />
           <Tabs.Screen
-            name='home/index.style'
+            name='home/home.style'
             options={{
               // headerShown: true,
               href: null,

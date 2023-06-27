@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import styles from './index.style';
+import styles from './home.style';
 import images from '../../constants/images';
 
 import HomeHeader from '../../components/home/HomeHeader';
