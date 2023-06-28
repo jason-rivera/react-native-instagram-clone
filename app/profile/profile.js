@@ -12,6 +12,7 @@ import {
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import images from '../../constants/images';
 import * as React from 'react';
+import { MaterialIcon, FontAwesome5Icon } from '../../utils/utils';
 
 import styles from './profile.style';
 
@@ -154,14 +155,22 @@ const Profile = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingVertical: 5,
+            paddingHorizontal: 10,
           }}
         >
-          <Text style={{ fontWeight: 'bold', fontSize: 23 }}>
-            🔒 jvsonrivera
-          </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 23 }}>
+              jvsonrivera
+            </Text>
+            <MaterialIcon size={15} name={'lock'} color='black' />
+            <MaterialIcon
+              size={15}
+              name={'lock-open-variant-outline'}
+              color='black'
+            />
+          </View>
           <View style={{ flexDirection: 'row', gap: 20 }}>
-            <Text style={{ fontSize: 20 }}>➕</Text>
-            <Text style={{ fontSize: 20 }}>🍔</Text>
+            <MaterialIcon size={28} name={'menu'} color='black' />
           </View>
         </View>
         <View style={{ flexDirection: 'row' }}>
@@ -202,9 +211,6 @@ const Profile = () => {
             </TouchableOpacity>
             <TouchableOpacity style={[styles.profileBtn, { flexGrow: 1 }]}>
               <Text style={styles.profileBtnText}>Share profile</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.profileBtn}>
-              <Text style={styles.profileBtnText}>+🤺</Text>
             </TouchableOpacity>
           </View>
         </View>

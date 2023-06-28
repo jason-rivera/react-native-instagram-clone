@@ -30,7 +30,7 @@ const Search = () => {
             paddingHorizontal: 10,
             fontSize: 16,
           }}
-          placeholder='🔍 Search'
+          placeholder='Search'
         />
       </View>
     </TouchableWithoutFeedback>

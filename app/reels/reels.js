@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import styles from './reels.style';
+import { MaterialIcon, FontAwesome5Icon } from '../../utils/utils';
 
 const reels = [
   'https://static.tvtropes.org/pmwiki/pub/images/2e5c6d37_566f_4274_b62d_ebf5fcbd0722.png',
@@ -58,8 +59,8 @@ const Reels = () => {
                     </View>
                   </View>
                   <View style={styles.iconsContainer}>
-                    <Text style={styles.sideIcons}>♥</Text>
-                    <Text style={styles.sideIcons}>🗨</Text>
+                    <MaterialIcon size={25} name={'heart'} color='black' />
+                    <MaterialIcon size={25} name={'comment'} color='black' />
                   </View>
                 </View>
               </View>

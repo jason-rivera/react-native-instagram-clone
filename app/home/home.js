@@ -26,7 +26,7 @@ const posts = [
     username: 'jaiden_r',
     image: images.goku_god,
     likes: 10,
-    comments: 2,
+    comments: 0,
     caption: 'Another caption',
   },
   {
@@ -103,7 +103,13 @@ const Home = () => {
                 <Text style={{ fontWeight: 'bold' }}>{item.username} </Text>
                 <Text>{item.caption}</Text>
               </View>
-              <Text style={{ color: 'grey' }}>{item.comments} comments</Text>
+              <Text style={{ color: 'grey' }}>
+                {item.comments < 1
+                  ? 'No comments'
+                  : `View ${item.comments > 1 ? 'all' : ''} ${
+                      item.comments
+                    } comment${item.comments > 1 ? 's' : ''}`}
+              </Text>
             </View>
           </View>
         </View>

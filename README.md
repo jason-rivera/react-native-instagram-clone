@@ -1,4 +1,4 @@
-# Instagram Clone created with React Native
+# Instagram Clone created with React Native + Expo Router
 
 ## Preview
 
