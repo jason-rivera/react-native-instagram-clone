@@ -7,7 +7,12 @@
     "name": "instagram_clone",
     "slug": "instagram_clone",
     "android": {
-      "package": "com.jasonrivera.instagram_clone"
+      "package": "com.jasonrivera.instagram_clone",
+      "permissions": ["android.permission.RECORD_AUDIO"],
+      "googleServicesFile": "./google-services.json"
+    },
+    "ios": {
+      "bundleIdentifier": "ios-insta"
     },
     "plugins": [
       [
@@ -16,6 +21,11 @@
           "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3a2c26ac-f894-4849-a026-939421439c22"
+      }
+    }
   }
 }

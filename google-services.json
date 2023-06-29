@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "104527285258",
+    "project_id": "react-native-expo-insta-clone",
+    "storage_bucket": "react-native-expo-insta-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104527285258:android:8a823c5e73e917b5c063f3",
+        "android_client_info": {
+          "package_name": "com.jasonrivera.instagram_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104527285258-c77gaj389cscb99bgdsejccf8na70jh8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jasonrivera.instagram_clone",
+            "certificate_hash": "99a34a9a79908b751669aced28805b803fc49dc5"
+          }
+        },
+        {
+          "client_id": "104527285258-q1rsp6uuh9gnk29j8db6cgrsdktlqgmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-iOATwDW-GQAfTzyGJWpTuHw0CAa5i6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104527285258-q1rsp6uuh9gnk29j8db6cgrsdktlqgmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
