@@ -138,13 +138,25 @@ const renderScene = SceneMap({
   third: ThirdRoute,
 });
 
+const renderTabBarIcon = (props) => {
+  const { route } = props;
+
+  if (route.key === 'first') {
+    return <MaterialIcon name='postage-stamp' size={25} color={'black'} />;
+  } else if (route.key === 'second') {
+    return <MaterialIcon name='circle' size={25} color={'black'} />;
+  } else if (route.key === 'third') {
+    return <MaterialIcon name='tag-multiple' size={25} color={'black'} />;
+  }
+};
+
 const Profile = () => {
   const layout = useWindowDimensions();
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: 'first', title: '🔳' },
-    { key: 'second', title: '🎥' },
-    { key: 'third', title: '🧑' },
+    { key: 'first', title: '' },
+    { key: 'second', title: '' },
+    { key: 'third', title: '' },
   ]);
 
   return (
@@ -224,10 +236,13 @@ const Profile = () => {
         renderTabBar={(props) => (
           <TabBar
             {...props}
-            style={{ backgroundColor: 'white' }}
             indicatorStyle={{ backgroundColor: 'black', height: 1 }}
+            renderIcon={(props) => renderTabBarIcon(props)}
+            tabStyle={styles.bubble}
+            labelStyle={styles.noLabel}
+            style={{ backgroundColor: 'white' }}
           />
-        )} // <-- add this line
+        )}
       />
     </>
   );
