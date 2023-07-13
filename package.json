@@ -6,6 +6,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@expo/config-plugins": "^6.0.2",
     "expo": "~48.0.18",
     "expo-constants": "~14.2.1",
