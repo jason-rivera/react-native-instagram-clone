@@ -1,4 +1,15 @@
-import { View, Text, SafeAreaView, Button } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Button,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+
+import { useRouter } from 'expo-router';
+
+import { useState } from 'react';
 import * as React from 'react';
 // import * as WebBrowser from 'expo-web-browser';
 // import * as Google from 'expo-auth-session/providers/google';
@@ -46,11 +57,39 @@ const Login = () => {
   //   //   console.log(user);
   //   // });
   // }
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const router = useRouter();
+
+  const login = () => {
+    console.log(email, password);
+    router.push('home/home');
+  };
+
   return (
     // <SafeAreaView>
-    <View>
-      <Text>Login</Text>
+    <View style={{ gap: 20, margin: 20 }}>
       {/* <Button title='Sign in with Google' onPress={promptAsync} /> */}
+      <Text>Login</Text>
+      <TextInput
+        placeholder='Email'
+        style={{ height: 30, backgroundColor: 'white', padding: 5 }}
+        onChangeText={(text) => setEmail(text)}
+      />
+      <TextInput
+        placeholder='Password'
+        style={{ height: 30, backgroundColor: 'white', padding: 5 }}
+        onChangeText={(text) => setPassword(text)}
+      />
+      <TouchableOpacity onPress={login}>
+        <Text>Login</Text>
+      </TouchableOpacity>
+
+      {/* <Link href='home/home'>
+        <Text>Go Home</Text>
+      </Link> */}
     </View>
     // </SafeAreaView>
   );
