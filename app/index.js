@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import * as React from 'react';
 import axios from 'axios';
 import { FIREBASE_DB } from '../firebaseConfig';
-import { collection, addDoc } from 'firebase/firestore';
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore';
 
 // import * as WebBrowser from 'expo-web-browser';
 // import * as Google from 'expo-auth-session/providers/google';
@@ -60,31 +60,48 @@ const Login = () => {
   //   // });
   // }
 
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [userExists, setUserExists] = useState(true);
 
   const router = useRouter();
 
-  useEffect(() => {});
-
-  const addTodo = async () => {
-    console.log('add');
-
-    try {
-      const doc = await addDoc(collection(FIREBASE_DB, 'todos'), {
-        title: 'I am a test',
-        done: false,
-      });
-      console.log('adding doc:', doc);
-    } catch (error) {
-      console.log('error adding doc:', error);
-    }
-  };
+  useEffect(() => {
+    console.log(username);
+  }, [username]);
 
   const login = async () => {
-    const response = await axios.get('http://192.168.1.108:3000/ping');
-    console.log(response.data);
+    // const response = await axios.get('http://192.168.1.108:3000/ping');
+    // console.log(response.data);
     // router.push('home/home');
+
+    setUserExists(true);
+    console.log('logging in');
+
+    try {
+      // Check if a user with the same username already exists
+      const userQuery = query(
+        collection(FIREBASE_DB, 'users'),
+        where('username', '==', username)
+      );
+      const querySnapshot = await getDocs(userQuery);
+
+      if (querySnapshot.empty || username === '') {
+        // User with the same username already exists
+        console.log('User does not exist in our database!');
+        setUserExists(false);
+        return;
+      }
+
+      const user = await addDoc(collection(FIREBASE_DB, 'users'), {
+        username: username,
+        password: password,
+      });
+      console.log('adding user:', user);
+      router.push('home/home');
+    } catch (error) {
+      console.log('error adding user:', error);
+    }
   };
 
   return (
@@ -93,20 +110,28 @@ const Login = () => {
       {/* <Button title='Sign in with Google' onPress={promptAsync} /> */}
       <Text>Login</Text>
       <TextInput
-        placeholder='Email'
+        placeholder='Username'
         style={{ height: 30, backgroundColor: 'white', padding: 5 }}
-        onChangeText={(text) => setEmail(text)}
+        onChangeText={(text) => setUsername(text)}
       />
       <TextInput
         placeholder='Password'
+        secureTextEntry={true}
         style={{ height: 30, backgroundColor: 'white', padding: 5 }}
         onChangeText={(text) => setPassword(text)}
       />
-      <TouchableOpacity onPress={login}>
-        <Text>Login</Text>
-      </TouchableOpacity>
 
-      <Button onPress={addTodo} title='TESTTTTT' />
+      <Button onPress={login} title='Login' />
+      {!userExists && (
+        <Text style={{ color: 'red' }}>
+          Username doesn't exist in our database!
+        </Text>
+      )}
+
+      <Button
+        onPress={() => router.push('register/register')}
+        title='Create New Account'
+      />
 
       {/* <Link href='home/home'>
         <Text>Go Home</Text>

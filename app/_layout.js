@@ -134,6 +134,13 @@ const Layout = () => {
               href: null,
             }}
           />
+          <Tabs.Screen
+            name='register/register'
+            options={{
+              // headerShown: true,
+              href: null,
+            }}
+          />
         </Tabs>
       </SafeAreaView>
     </>
