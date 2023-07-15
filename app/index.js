@@ -6,11 +6,13 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-
 import { useRouter } from 'expo-router';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as React from 'react';
+import axios from 'axios';
+import { FIREBASE_DB } from '../firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
+
 // import * as WebBrowser from 'expo-web-browser';
 // import * as Google from 'expo-auth-session/providers/google';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -63,9 +65,26 @@ const Login = () => {
 
   const router = useRouter();
 
-  const login = () => {
-    console.log(email, password);
-    router.push('home/home');
+  useEffect(() => {});
+
+  const addTodo = async () => {
+    console.log('add');
+
+    try {
+      const doc = await addDoc(collection(FIREBASE_DB, 'todos'), {
+        title: 'I am a test',
+        done: false,
+      });
+      console.log('adding doc:', doc);
+    } catch (error) {
+      console.log('error adding doc:', error);
+    }
+  };
+
+  const login = async () => {
+    const response = await axios.get('http://192.168.1.108:3000/ping');
+    console.log(response.data);
+    // router.push('home/home');
   };
 
   return (
@@ -86,6 +105,8 @@ const Login = () => {
       <TouchableOpacity onPress={login}>
         <Text>Login</Text>
       </TouchableOpacity>
+
+      <Button onPress={addTodo} title='TESTTTTT' />
 
       {/* <Link href='home/home'>
         <Text>Go Home</Text>
